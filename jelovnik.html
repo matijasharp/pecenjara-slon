@@ -11,8 +11,8 @@
             --paper-dark: #e9d7c4;
             --brown: #4b2b1b;
             --brown-soft: #6b4a38;
-            --accent: #d17a2b;
-            --accent-dark: #a85f1e;
+            --accent: #ff6600;
+            --accent-dark: #ff6600;
             --line: rgba(107, 74, 56, 0.35);
         }
 
@@ -52,11 +52,11 @@
             height: auto;
         }
 
-        .menu-title {
+.menu-title {
             font-family: 'Lora', serif;
             font-size: clamp(36px, 5vw, 54px);
             letter-spacing: 1px;
-            color: var(--accent-dark);
+            color: var(--brown);
             font-weight: 700;
         }
 
@@ -228,12 +228,41 @@
             color: var(--brown-soft);
         }
 
-        .footer-mascot {
+.footer-mascot {
             width: 60px;
             height: auto;
             margin-left: 10px;
             vertical-align: middle;
             opacity: 0.7;
+        }
+
+        .order-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff8800 0%, #ff6600 100%);
+            color: white;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.4);
+        }
+
+        .order-btn-header {
+            margin-top: 10px;
+        }
+
+        .order-btn-footer {
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
 
         @media (max-width: 900px) {
@@ -270,10 +299,13 @@
 </head>
 <body>
     <div class="menu-wrap">
-        <header class="menu-hero">
-            <img src="assets/logos/slon-logo-transparent.png" alt="Pečenjara Slon">
+<header class="menu-hero">
+            <a href="index.html">
+                <img src="assets/logos/slon-logo-transparent.png" alt="Pečenjara Slon">
+            </a>
             <h1 class="menu-title">PEČENJARA <span>SLON</span></h1>
             <div class="menu-subtitle">Gajnice jedu ovdje</div>
+            <a href="https://wolt.com/hr/hrv/zagreb/restaurant/peenjara-slon" class="order-btn order-btn-header" target="_blank" rel="noopener noreferrer">Naruči dostavu</a>
         </header>
 
         <section class="menu-section">
@@ -399,7 +431,8 @@
 
         </section>
 
-        <footer class="menu-footer">
+<footer class="menu-footer">
+            <a href="https://wolt.com/hr/hrv/zagreb/restaurant/peenjara-slon" class="order-btn order-btn-footer" target="_blank" rel="noopener noreferrer">Naruči dostavu</a>
             <div>Gospodska 28, Zagreb</div>
             <div class="phone">+385 1 700 1256</div>
             <div class="note">

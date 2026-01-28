@@ -80,7 +80,9 @@
         <div class="specialty-cards">
             <!-- Cevapi Card -->
             <div class="specialty-card">
-                <img class="card-image" src="assets/food/cevapi-pecenjara-slon.png" alt="Ćevapi">
+                <div class="card-image-wrapper">
+                    <img class="card-image" src="assets/food/cevapi-pecenjara-slon.png" alt="Ćevapi">
+                </div>
                 <div class="card-title-overlay">
                     <h3>Ćevapi 🔥</h3>
                 </div>
@@ -93,7 +95,9 @@
 
             <!-- Grilled Chicken Card -->
             <div class="specialty-card">
-                <img class="card-image" src="assets/food/tortilla-pecenjara-slon.png" alt="Tortilja">
+                <div class="card-image-wrapper">
+                    <img class="card-image" src="assets/food/tortilla-pecenjara-slon.png" alt="Tortilja">
+                </div>
                 <div class="card-title-overlay">
                     <h3>Tortilja 🌯</h3>
                 </div>
@@ -106,7 +110,9 @@
 
             <!-- Mixed Grill Card -->
             <div class="specialty-card">
-                <img class="card-image" src="assets/food/burger-pecenjara-slon.png" alt="Mješano Meso">
+                <div class="card-image-wrapper">
+                    <img class="card-image" src="assets/food/burger-pecenjara-slon.png" alt="Mješano Meso">
+                </div>
                 <div class="card-title-overlay">
                     <h3>Burgeri 🍔</h3>
                 </div>
@@ -184,6 +190,22 @@
             <div class="gallery-item">
                 <img src="assets/gallery/pecenjara-slon-zagreb.webp" alt="Pečenjara Slon Zagreb">
             </div>
+            <div class="gallery-item gallery-video-item" id="videoTrigger" role="button" tabindex="0" aria-label="Pokreni promo video">
+                <div class="video-thumbnail">
+                    <img class="video-thumbnail-bg" src="assets/video/thumbnail-image.png" alt="Video thumbnail">
+                    <div class="video-thumbnail-branding">
+                        <img class="video-thumbnail-logo" src="assets/logos/slon-logo-transparent.png" alt="">
+                        <span class="video-thumbnail-title"><span class="title-pecenjara">Pečenjara</span> <span class="title-slon">Slon</span></span>
+                    </div>
+                </div>
+                <div class="gallery-play-overlay">
+                    <div class="gallery-play-btn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8 5v14l11-7z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <button class="view-more-btn">Pogledaj Više Fotografija</button>
@@ -203,7 +225,7 @@
     <!-- Footer -->
     <div class="pecenjara-slon-footer">
         <div class="footer-content">
-            <div class="footer-brand">
+<div class="footer-brand">
                 <img class="footer-logo" src="assets/logos/slon-logo-transparent.png" alt="Pečenjara Slon">
                 <p class="footer-tagline">Najbolji fast food roštilj u Gajnicama.</p>
             </div>
@@ -218,17 +240,58 @@
                     <p>subota 10–22</p>
                     <p>nedjelja 14–22</p>
                 </div>
-                <div class="footer-block">
+<div class="footer-block">
                     <h3>Kontakt</h3>
                     <a href="tel:+385017001256">01 7001 256</a>
                     <div class="footer-socials">
                         <a href="#">Instagram</a>
                         <a href="#">Facebook</a>
                     </div>
+                    <a href="https://wolt.com/hr/hrv/zagreb/restaurant/peenjara-slon" class="footer-order-btn" target="_blank" rel="noopener noreferrer">Naruči dostavu</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Fullscreen Video Overlay -->
+    <div class="video-fullscreen-overlay" id="videoOverlay" aria-hidden="true">
+        <button class="video-close-btn" id="videoCloseBtn" aria-label="Zatvori video">&times;</button>
+        <div class="video-container">
+            <video id="promoVideo" playsinline preload="metadata">
+                <source src="assets/video/promo-video.mp4" type="video/mp4">
+                Vaš preglednik ne podržava video.
+            </video>
+            <audio id="promoAudio" preload="auto">
+                <source src="assets/video/promo-audio.mp3" type="audio/mpeg">
+            </audio>
+            <div class="video-controls">
+                <button class="video-play-pause-btn" id="videoPlayPauseBtn" aria-label="Pokreni video">
+                    <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" fill="currentColor"/>
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Audio Button -->
+    <button class="floating-audio-btn" id="floatingAudioBtn" aria-label="Pusti glazbu" title="Pusti glazbu">
+        <svg class="audio-icon audio-icon-play" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
+        </svg>
+        <svg class="audio-icon audio-icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/>
+        </svg>
+        <svg class="audio-icon audio-icon-muted" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" fill="currentColor"/>
+        </svg>
+    </button>
+    <audio id="floatingAudio" preload="auto">
+        <source src="assets/video/promo-audio.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="js/index.js" defer></script>
 </body>
