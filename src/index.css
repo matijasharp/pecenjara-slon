@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+
+  body {
+    @apply bg-background text-text-dark font-sans antialiased selection:bg-accent/20;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, #ff9933 0%, #ff6600 100%);
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #ff9933 0%, #ff6600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .noise-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .hidden-text {
+    line-height: normal;
+    /* To prevent clipping on dramatic font accents */
+  }
+
+  /* Custom Ticket Shape CSS */
+  .ticket-cutout {
+    position: relative;
+    border-radius: 4px;
+    mask-image: linear-gradient(to top, transparent 4px, black 4px), radial-gradient(circle at 50% 100%, transparent 4px, black 4.5px);
+    mask-size: 100% 100%, 12px 8px;
+    mask-repeat: no-repeat, repeat-x;
+    mask-position: 0 0, 0 100%;
+  }
+
+  .ticket-cutout-inverted {
+    position: relative;
+    border-radius: 4px;
+    mask-image: linear-gradient(to bottom, transparent 4px, black 4px), radial-gradient(circle at 50% 0, transparent 4px, black 4.5px);
+    mask-size: 100% 100%, 12px 8px;
+    mask-repeat: no-repeat, repeat-x;
+    mask-position: 0 0, 0 0;
+  }
+}
